@@ -58,7 +58,6 @@ input[type="password"]:focus::placeholder {
     color: #000000; 
 }
 
-.btn-voltar,
 .cadastro-btn {
     width: 100%;
     padding: 15px;
@@ -72,9 +71,31 @@ input[type="password"]:focus::placeholder {
     transition: background-color 0.3s ease;
 }
 
-
-.btn-voltar:hover,
 .cadastro-btn:hover {
+    background-color: #022d29;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #009199;
+    padding: 15px;
+    border-radius: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
     background-color: #022d29;
 }
 

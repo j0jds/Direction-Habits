@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Tarefas</title>
+    <title>Listagem de Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/minhastarefas.css') }}">
 </head>
 <body>
-    
+    <div class="container">
+        <h2>Listagem de Tarefas</h2>
+        <div class="tasks">
+            <div class="task">
+                <div class="task-info">
+                    <h3 class="task-name">Nome da Tarefa</h3>
+                    <p class="task-priority">Prioridade: Alta</p>
+                    <p class="task-status">Finalizada: Não</p>
+                </div>
+                <div class="task-actions">
+                    <button class="btn-descricao">Ver Descrição</button>
+                    <button class="btn-editar">Editar</button>
+                    <button class="btn-excluir">Excluir</button>
+                </div>
+                <p class="task-descricao" style="display: none;">Descrição detalhada da tarefa.</p>
+            </div>
+        </div>
+        <button class="btn-adicionar">Adicionar Nova Tarefa</button>
+    </div>
 </body>
 </html>

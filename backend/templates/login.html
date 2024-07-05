@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro de Membro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
-    
+    <div class="container">
+        <h2>Entrar</h2>
+        <form id="form-entrar-membro">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button href="{{ url_for('minhastarefas') }}" class="entrar-btn">Entrar</button> 
+        </form>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Voltar</a></li>
+            </ul>
+        </nav>    
+    </div>
 </body>
 </html>
