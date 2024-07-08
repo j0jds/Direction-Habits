@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Membro</title>
+    <title>Entrar</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
     <div class="container">
         <h2>Entrar</h2>
-        <form id="form-entrar-membro">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="senha" placeholder="Senha" required>
-            <button href="{{ url_for('minhastarefas') }}" class="entrar-btn">Entrar</button> 
+        <form id="form-entrar-membro" method="POST" action="{{ url_for('login') }}">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
+            <button type="submit" class="entrar-btn">Entrar</button> 
         </form>
         <nav>
             <ul>
