@@ -2,25 +2,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(180deg, #002f01, #022d29);
+    background: linear-gradient(135deg, #483D8B, #A87BDE);
 }
 
 .container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 60px;
+    background-color: #E6E6FA;
+    padding: 40px;
+    border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -42,17 +41,17 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
-    background-color: #009199;
+    color:#ffffff;
+    background-color:#663399;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 8px;
     display: block;
     transition: background-color 0.3s ease;
     font-size: 18px;
 }
 
 nav ul li a:hover {
-    background-color: #022d29;
+    background-color:#4B0082;
 }
 
 @keyframes fadeIn {
