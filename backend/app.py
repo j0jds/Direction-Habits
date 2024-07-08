@@ -49,9 +49,25 @@ def cadastro():
     
     return render_template("cadastro.html")
 
-@app.route("/login")
+@app.route("/login", methods=['GET', 'POST'])
 def login():
-
+    if request.method == 'POST':
+        email = request.form['email']
+        senha = request.form['senha']
+        
+        db = get_db()
+        cursor = db.cursor()
+        
+        cursor.execute('SELECT * FROM membros WHERE email = ? AND senha = ?', (email, senha))
+        user = cursor.fetchone()
+        
+        if user:
+            return redirect(url_for('novatarefa'))
+        else:
+            flash('Email ou senha incorretos. Por favor, tente novamente.', 'error')
+        
+        cursor.close()
+    
     return render_template("login.html")
 
 @app.route("/tarefas")
