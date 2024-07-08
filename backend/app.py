@@ -45,7 +45,7 @@ def cadastro():
         db.commit()
         cursor.close()
         
-        return redirect(url_for('novatarefa')) 
+        return redirect(url_for('usuarioentrou')) 
     
     return render_template("cadastro.html")
 
@@ -62,7 +62,7 @@ def login():
         user = cursor.fetchone()
         
         if user:
-            return redirect(url_for('novatarefa'))
+            return redirect(url_for('usuarioentrou'))
         else:
             flash('Email ou senha incorretos. Por favor, tente novamente.', 'error')
         
@@ -70,10 +70,10 @@ def login():
     
     return render_template("login.html")
 
-@app.route("/tarefas")
-def tarefas():
+@app.route("/usuarioentrou")
+def usuarioentrou():
 
-    return render_template("tarefas.html")
+    return render_template("usuarioentrou.html")
 
 @app.route("/novatarefa")
 def novatarefa():
