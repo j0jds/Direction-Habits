@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Tarefa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/novatarefa.css') }}">
 </head>
 <body>
-    
+    <div class="container">
+        <h2>Nova Tarefa</h2>
+        <form id="form-nova-tarefa" method="POST" action="{{ url_for('novatarefa') }}">
+            <input type="text" id="nome" name="nome" placeholder="Nome da Tarefa" required>
+            <input type="text" id="descricao" name="descricao" placeholder="Descrição da Tarefa" required>
+            <div class="prioridade">
+                <p>Prioridade da Tarefa</p>
+                <div class="radio-buttons">
+                    <input type="radio" id="alta" name="prioridade" value="alta">
+                    <label for="alta">Alta</label>
+
+                    <input type="radio" id="media" name="prioridade" value="media">
+                    <label for="media">Média</label>
+
+                    <input type="radio" id="baixa" name="prioridade" value="baixa">
+                    <label for="baixa">Baixa</label>
+                </div>
+            </div>
+            <button type="submit" class="btn-salvar">Salvar Tarefa</button>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('usuarioentrou') }}">Voltar</a></li>
+                </ul>
+            </nav>   
+        </form> 
+    </div>
 </body>
 </html>
