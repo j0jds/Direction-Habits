@@ -1,9 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for, g
+from flask import Flask, render_template, request, redirect, url_for, g, flash
 import sqlite3
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
 
 app.config['DATABASE'] = 'backend/database.db'
+app.config['SECRET_KEY'] = 'cookiesecreto'
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -31,11 +32,20 @@ def cadastro():
         
         db = get_db()
         cursor = db.cursor()
-        cursor.execute('INSERT INTO membros (email, senha) VALUES (?, ?)', (email, senha))
+        
+        cursor.execute('SELECT * FROM membros WHERE email = ?', (email,))
+        existing_user = cursor.fetchone()
+        
+        if existing_user:
+            flash('Email já cadastrado. Por favor, tente outro email.')
+            return redirect(url_for('cadastro'))
+        
+        else:
+            cursor.execute('INSERT INTO membros (email, senha) VALUES (?, ?)', (email, senha))
         db.commit()
         cursor.close()
         
-        return redirect(url_for('novatarefa'))  
+        return redirect(url_for('novatarefa')) 
     
     return render_template("cadastro.html")
 
