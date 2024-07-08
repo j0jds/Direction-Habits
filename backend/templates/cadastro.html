@@ -9,11 +9,11 @@
 <body>
     <div class="container">
         <h2>Cadastro de Membro</h2>
-        <form id="form-cadastro-membro">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="senha" placeholder="Senha" required>
+        <form id="form-cadastro-membro" method="POST" action="{{ url_for('cadastro') }}">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
             <button type="submit" class="cadastro-btn">Cadastrar</button> 
-        </form>
+        </form>        
         <nav>
             <ul>
                 <li><a href="{{ url_for('home') }}">Voltar</a></li>

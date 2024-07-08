@@ -1,15 +1,42 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, g
+import sqlite3
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
+
+app.config['DATABASE'] = 'backend/database.db'
+
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = sqlite3.connect(app.config['DATABASE'])
+    return db
+
+@app.teardown_appcontext
+def close_connection(exception):
+    db = getattr(g, '_database', None)
+    if db is not None:
+        db.close()
 
 @app.route("/") 
 def home():
 
     return render_template("home.html")
 
-@app.route("/cadastro")
+@app.route("/cadastro", methods=['GET', 'POST'])
 def cadastro():
-
+    
+    if request.method == 'POST':
+        email = request.form['email']
+        senha = request.form['senha']
+        
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute('INSERT INTO membros (email, senha) VALUES (?, ?)', (email, senha))
+        db.commit()
+        cursor.close()
+        
+        return redirect(url_for('novatarefa'))  
+    
     return render_template("cadastro.html")
 
 @app.route("/login")
