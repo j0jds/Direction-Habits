@@ -20,12 +20,10 @@ def close_connection(exception):
 
 @app.route("/") 
 def home():
-
     return render_template("home.html")
 
 @app.route("/cadastro", methods=['GET', 'POST'])
 def cadastro():
-    
     if request.method == 'POST':
         email = request.form['email']
         senha = request.form['senha']
@@ -42,10 +40,9 @@ def cadastro():
         
         else:
             cursor.execute('INSERT INTO membros (email, senha) VALUES (?, ?)', (email, senha))
-        db.commit()
-        cursor.close()
-        
-        return redirect(url_for('novatarefa')) 
+            db.commit()
+            cursor.close()
+            return redirect(url_for('usuarioentrou')) 
     
     return render_template("cadastro.html")
 
@@ -62,7 +59,7 @@ def login():
         user = cursor.fetchone()
         
         if user:
-            return redirect(url_for('novatarefa'))
+            return redirect(url_for('usuarioentrou'))
         else:
             flash('Email ou senha incorretos. Por favor, tente novamente.', 'error')
         
@@ -70,20 +67,47 @@ def login():
     
     return render_template("login.html")
 
-@app.route("/tarefas")
-def tarefas():
+@app.route("/usuarioentrou")
+def usuarioentrou():
+    return render_template("usuarioentrou.html")
 
-    return render_template("tarefas.html")
-
-@app.route("/novatarefa")
+@app.route("/novatarefa", methods=['GET', 'POST'])
 def novatarefa():
-
+    if request.method == 'POST':
+        nome = request.form['nome']
+        descricao = request.form['descricao']
+        prioridade = request.form['prioridade']
+        
+        db = get_db()
+        cursor = db.cursor()
+        
+        cursor.execute('INSERT INTO tarefa (nome, descricao, prioridade) VALUES (?, ?, ?)', (nome, descricao, prioridade))
+        db.commit()
+        cursor.close()
+        
+        return redirect(url_for('minhastarefas'))  
+    
     return render_template("novatarefa.html")
 
 @app.route("/minhastarefas")
 def minhastarefas():
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute('SELECT * FROM tarefa')
+    tarefas = cursor.fetchall()
+    cursor.close()
+    
+    return render_template("minhastarefas.html", tarefas=tarefas)
 
-    return render_template("minhastarefas.html")
+@app.route("/excluir_tarefa/<int:tarefa_id>", methods=['POST'])
+def excluir_tarefa(tarefa_id):
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute('DELETE FROM tarefa WHERE id = ?', (tarefa_id,))
+    db.commit()
+    cursor.close()
+    flash('Tarefa excluída com sucesso!', 'success')
+    return redirect(url_for('minhastarefas'))
 
 if __name__ == "__main__":
     app.run(debug=True)

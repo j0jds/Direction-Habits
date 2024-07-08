@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuário Entrou</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/usuarioentrou.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Bem-vindo!</h2>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('novatarefa') }}">Registrar Nova Tarefa</a></li>
+                <li><a href="{{ url_for('minhastarefas') }}">Minhas Tarefas</a></li>
+                <li><a href="{{ url_for('home') }}">Sair</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
