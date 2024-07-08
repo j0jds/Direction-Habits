@@ -14,7 +14,11 @@
             <input type="password" id="senha" placeholder="Senha" required>
             <button type="submit" class="cadastro-btn">Cadastrar</button> 
         </form>
-        <button href="{{ url_for('home') }}" class="btn-voltar">Voltar</button>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Voltar</a></li>
+            </ul>
+        </nav>  
     </div>
 </body>
 </html>
