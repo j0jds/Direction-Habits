@@ -35,16 +35,18 @@ def cadastro():
         existing_user = cursor.fetchone()
         
         if existing_user:
-            flash('Email já cadastrado. Por favor, tente outro email.')
+            flash('Email já cadastrado. Por favor, tente outro email.', 'error')
             return redirect(url_for('cadastro'))
         
         else:
             cursor.execute('INSERT INTO membros (email, senha) VALUES (?, ?)', (email, senha))
             db.commit()
             cursor.close()
+            flash('Cadastro realizado com sucesso!', 'success')
             return redirect(url_for('usuarioentrou')) 
     
     return render_template("cadastro.html")
+
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -59,6 +61,7 @@ def login():
         user = cursor.fetchone()
         
         if user:
+            flash('Login realizado com sucesso!', 'success')
             return redirect(url_for('usuarioentrou'))
         else:
             flash('Email ou senha incorretos. Por favor, tente novamente.', 'error')
@@ -108,6 +111,29 @@ def excluir_tarefa(tarefa_id):
     cursor.close()
     flash('Tarefa excluída com sucesso!', 'success')
     return redirect(url_for('minhastarefas'))
+
+@app.route("/editartarefas/<int:tarefa_id>", methods=['GET', 'POST'])
+def editartarefas(tarefa_id):
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute('SELECT * FROM tarefa WHERE id = ?', (tarefa_id,))
+    tarefa = cursor.fetchone()
+    cursor.close()
+
+    if request.method == 'POST':
+        nome = request.form['nome']
+        descricao = request.form['descricao']
+        prioridade = request.form['prioridade']
+
+        cursor = db.cursor()
+        cursor.execute('UPDATE tarefa SET nome = ?, descricao = ?, prioridade = ? WHERE id = ?', (nome, descricao, prioridade, tarefa_id))
+        db.commit()
+        cursor.close()
+        
+        flash('Tarefa atualizada com sucesso!', 'success')
+        return redirect(url_for('minhastarefas'))
+
+    return render_template('editartarefas.html', tarefa=tarefa)
 
 if __name__ == "__main__":
     app.run(debug=True)
