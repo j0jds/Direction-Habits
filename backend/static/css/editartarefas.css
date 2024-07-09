@@ -158,12 +158,12 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.flashes li.error {
+.flashes li.tarefa_error {
     background-color: #ffcccc;
     color: #ff0000;
 }
 
-.flashes li.success {
+.flashes li.tarefa_success {
     background-color: #ccffcc;
     color: #00cc00;
 }
