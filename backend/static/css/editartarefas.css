@@ -27,51 +27,81 @@ body {
 
 .container h2 {
     margin-bottom: 20px;
-    color: #222222;
+    color: #333;
     font-size: 24px;
 }
 
+.container p {
+    margin-bottom: 20px;
+    color: #222222;
+    font-size: 20px;
+}
+
 form {
+    margin-top: 20px;
+}
+
+form input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    outline: none;
+    border-color: #663399;
+}
+
+.prioridade {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.radio-buttons {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
     align-items: center;
 }
 
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+.radio-buttons input[type="radio"] {
+    display: none;
+}
+
+.radio-buttons label {
     font-size: 16px;
-    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
 }
 
-input[type="email"]::placeholder,
-input[type="password"]::placeholder {
-    color: #222222;
+.radio-buttons input[type="radio"]:checked + label {
+    background-color:#663399;
+    color: white;
+    border-color: #663399;
 }
 
-input[type="email"]:focus::placeholder,
-input[type="password"]:focus::placeholder {
-    color: #222222;
-}
-
-.entrar-btn {
-    width: 100%;
+form button {
+    color:#663399;
+    background-color:#663399;
     padding: 14px 24px;
     border: none;
     border-radius: 8px;
-    background-color:#663399;
-    color: white;
-    font-size: 18px;
     cursor: pointer;
+    font-size: 18px;
     transition: background-color 0.3s ease;
     margin-top: 20px;
 }
 
-.entrar-btn:hover {
+form button:hover {
     background-color:#4B0082;
 }
 
@@ -99,6 +129,23 @@ nav ul li a:hover {
     background-color:#4B0082;
 }
 
+.btn-salvar {
+    width: 100%;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color:#663399;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-salvar:hover {
+    background-color:#4B0082;
+}
+
 .flashes {
     list-style: none;
     padding: 0;
@@ -111,12 +158,12 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.flashes li.login_error {
+.flashes li.tarefa_error {
     background-color: #ffcccc;
     color: #ff0000;
 }
 
-.flashes li.login_success {
+.flashes li.tarefa_success {
     background-color: #ccffcc;
     color: #00cc00;
 }
@@ -129,5 +176,13 @@ nav ul li a:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
     }
 }

@@ -23,6 +23,9 @@ body {
     max-width: 600px;
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
+    margin-top: 20px; 
+    max-height: calc(100vh - 120px); 
+    overflow: auto; 
 }
 
 .container h2 {

@@ -37,6 +37,7 @@ form {
     align-items: center;
 }
 
+input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
@@ -48,15 +49,18 @@ input[type="password"] {
     outline: none;
 }
 
+input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="password"]::placeholder {
     color: #aaa; 
 }
 
+input[type="text"]:focus::placeholder,
 input[type="email"]:focus::placeholder,
 input[type="password"]:focus::placeholder {
     color: #000000; 
 }
+
 
 .cadastro-btn {
     width: 100%;
@@ -97,6 +101,23 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color:#4B0082;
+}
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flashes li.cadastro_error {
+    background-color: #ffcccc;
+    color: #ff0000;
 }
 
 @keyframes fadeIn {

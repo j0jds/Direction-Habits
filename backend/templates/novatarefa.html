@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Tarefa</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/novatarefa.css') }}">
+    <script src="{{ url_for('static', filename='js/novatarefa.js') }}" defer></script>
 </head>
+
 <body>
     <div class="container">
         <h2>Nova Tarefa</h2>
         <form id="form-nova-tarefa" method="POST" action="{{ url_for('novatarefa') }}">
+            <div id="mensagem-erro" style="display: none; color: red; margin-bottom: 20px;">Selecione uma prioridade
+                para prosseguir.</div>
             <input type="text" id="nome" name="nome" placeholder="Nome da Tarefa" required>
             <input type="text" id="descricao" name="descricao" placeholder="Descrição da Tarefa" required>
             <div class="prioridade">
@@ -30,8 +35,9 @@
                 <ul>
                     <li><a href="{{ url_for('usuarioentrou') }}">Voltar</a></li>
                 </ul>
-            </nav>   
-        </form> 
+            </nav>
+        </form>
     </div>
 </body>
+
 </html>

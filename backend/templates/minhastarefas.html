@@ -18,11 +18,10 @@
                 <div class="task-info">
                     <h3 class="task-name">{{ tarefa[1] }}</h3>
                     <p class="task-priority">Prioridade: {{ tarefa[3] }}</p>
-                    <p class="task-status">Finalizada: Não</p>
                 </div>
                 <div class="task-actions">
                     <button class="btn-descricao" onclick="toggleDescription('{{ tarefa[0] }}')">Ver Descrição</button>
-                    <button class="btn-editar">Editar</button>
+                    <button class="btn-editar" onclick="editarTarefa('{{ tarefa[0] }}')">Editar</button>
                     <form method="POST" action="{{ url_for('excluir_tarefa', tarefa_id=tarefa[0]) }}">
                         <button type="submit" class="btn-excluir">Excluir</button>
                     </form>
@@ -34,7 +33,7 @@
         <nav>
             <ul>
                 <li><a href="{{ url_for('novatarefa') }}">Adicionar Nova Tarefa</a></li>
-                <li><a href="{{ url_for('usuarioentrou') }}">Voltar</a></li>
+                <li><a href="{{ url_for('usuarioentrou') }}">Voltar</a></li>    
             </ul>
         </nav>
     </div>
