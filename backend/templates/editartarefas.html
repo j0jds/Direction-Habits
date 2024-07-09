@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Tarefa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editartarefas.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Editar Tarefa</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <input type="text" name="nome" value="{{ tarefa[1] }}" placeholder="Nome da Tarefa" required>
+            <input type="text" name="descricao" value="{{ tarefa[2] }}" placeholder="Descrição da Tarefa" required>
+            <div class="prioridade">
+                <p>Prioridade da Tarefa</p>
+                <div class="radio-buttons">
+                    <input type="radio" id="alta" name="prioridade" value="alta" {% if tarefa[3]=='alta' %}checked{%
+                        endif %}>
+                    <label for="alta">Alta</label>
+
+                    <input type="radio" id="media" name="prioridade" value="media" {% if tarefa[3]=='media' %}checked{%
+                        endif %}>
+                    <label for="media">Média</label>
+
+                    <input type="radio" id="baixa" name="prioridade" value="baixa" {% if tarefa[3]=='baixa' %}checked{%
+                        endif %}>
+                    <label for="baixa">Baixa</label>
+                </div>
+            </div>
+            <button type="submit" class="btn-salvar">Salvar Tarefa</button>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('minhastarefas') }}">Cancelar</a></li>
+                </ul>
+            </nav>
+        </form>
+    </div>
+</body>
+
+</html>
