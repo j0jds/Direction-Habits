@@ -6,3 +6,7 @@ function toggleDescription(taskId) {
         descriptionElement.style.display = 'none';
     }
 }
+
+function editarTarefa(tarefaId) {
+    window.location.href = '/editartarefas/' + tarefaId;
+}
