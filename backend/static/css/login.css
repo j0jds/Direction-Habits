@@ -99,6 +99,28 @@ nav ul li a:hover {
     background-color:#4B0082;
 }
 
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flashes li.error {
+    background-color: #ffcccc;
+    color: #ff0000;
+}
+
+.flashes li.success {
+    background-color: #ccffcc;
+    color: #00cc00;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
