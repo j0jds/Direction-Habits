@@ -9,6 +9,15 @@
 <body>
     <div class="container">
         <h2>Entrar</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
         <form id="form-entrar-membro" method="POST" action="{{ url_for('login') }}">
             <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="password" id="senha" name="senha" placeholder="Senha" required>
