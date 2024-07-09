@@ -47,7 +47,6 @@ def cadastro():
     
     return render_template("cadastro.html")
 
-
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -99,7 +98,7 @@ def minhastarefas():
     cursor.execute('SELECT * FROM tarefa')
     tarefas = cursor.fetchall()
     cursor.close()
-    
+
     return render_template("minhastarefas.html", tarefas=tarefas)
 
 @app.route("/excluir_tarefa/<int:tarefa_id>", methods=['POST'])
