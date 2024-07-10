@@ -5,13 +5,14 @@
     font-family: "Poppins", sans-serif;
     animation: fadeIn 1s ease-in-out;
 }
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #1A9654, #C7E9D6); 
+    background: linear-gradient(135deg, #1A9654, #C7E9D6);
 }
 
 .container {
@@ -23,14 +24,14 @@ body {
     max-width: 600px;
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
-    margin-top: 20px; 
-    max-height: calc(100vh - 120px); 
-    overflow: auto; 
+    margin-top: 20px;
+    max-height: calc(100vh - 120px);
+    overflow: auto;
 }
 
 .container h2 {
     margin-bottom: 20px;
-    color: #003117; 
+    color: #003117;
     font-size: 24px;
 }
 
@@ -122,6 +123,7 @@ body {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

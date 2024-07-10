@@ -29,6 +29,7 @@
 .header nav ul {
     list-style-type: none;
     display: flex;
+    flex-direction: row;
 }
 
 .header nav ul li {
@@ -64,11 +65,11 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #1A9654, #C7E9D6); 
+    background: linear-gradient(135deg, #1A9654, #C7E9D6);
 }
 
 .container {
-    background-color: #C7E9D6; 
+    background-color: #C7E9D6;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -80,7 +81,7 @@ body {
 
 .container h2 {
     margin-bottom: 20px;
-    color: #003117; 
+    color: #003117;
     font-size: 24px;
 }
 
@@ -96,7 +97,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #ffffff;
-    background-color: #105c34; 
+    background-color: #105c34;
     padding: 15px;
     border-radius: 8px;
     display: block;
@@ -113,6 +114,7 @@ nav ul li a:hover {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -120,7 +122,7 @@ nav ul li a:hover {
 }
 
 .footer {
-    background-color: #105c34; 
+    background-color: #105c34;
     color: #ffffff;
     padding: 10px 20px;
     display: flex;
@@ -159,6 +161,7 @@ nav ul li a:hover {
         transform: translateY(100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -197,7 +200,8 @@ nav ul li a:hover {
 
     .header nav ul {
         flex-direction: column;
-        padding: 10%;
+        padding: 1%;
+        border-radius: 5px;
     }
 
     .header nav ul li {
@@ -219,3 +223,19 @@ nav ul li a:hover {
     }
 }
 
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flashes li.excluirusuario_success {
+    background-color: #ccffcc;
+    color: #00cc00;
+}
