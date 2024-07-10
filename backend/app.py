@@ -242,4 +242,4 @@ def excluirusuario():
     return render_template("excluirusuario.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
