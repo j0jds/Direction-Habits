@@ -48,7 +48,7 @@ This is a habit tracking web application developed with Python using the Flask f
 
 ## Host
 
-If you want to access without install anything, the website is disponible here: `http://j0jds.pythonanywhere.com/`
+If you want to access without install anything, the website is disponible here: http://j0jds.pythonanywhere.com/
 
 ## Documentation Used
 
