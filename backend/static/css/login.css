@@ -51,12 +51,12 @@ input[type="password"] {
 
 input[type="email"]::placeholder,
 input[type="password"]::placeholder {
-    color: #222222;
+    color: #aaa;
 }
 
 input[type="email"]:focus::placeholder,
 input[type="password"]:focus::placeholder {
-    color: #222222;
+    color: #000000;
 }
 
 .entrar-btn {
