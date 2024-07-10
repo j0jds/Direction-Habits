@@ -3,15 +3,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    animation: fadeIn 1s ease-in-out;
 }
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #483D8B, #A87BDE);
+    background: linear-gradient(135deg, #1A9654, #C7E9D6); 
 }
 
 .container {
@@ -30,7 +30,7 @@ body {
 
 .container h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #003117; 
     font-size: 24px;
 }
 
@@ -71,14 +71,14 @@ body {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #663399;
+    background-color: #105c34;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .task-actions button:hover {
-    background-color: #4B0082;
+    background-color: #1A9654;
 }
 
 .btn-adicionar {
@@ -87,7 +87,7 @@ body {
     margin-top: 20px;
     border: none;
     border-radius: 10px;
-    background-color: #663399;
+    background-color: #105c34;
     color: white;
     font-size: 18px;
     cursor: pointer;
@@ -95,7 +95,7 @@ body {
 }
 
 .btn-adicionar:hover {
-    background-color: #4B0082;
+    background-color: #1A9654;
 }
 
 .btn-voltar {
@@ -105,7 +105,7 @@ body {
     margin-top: 20px;
     border: none;
     border-radius: 10px;
-    background-color: #663399;
+    background-color: #105c34;
     color: white;
     font-size: 18px;
     cursor: pointer;
@@ -114,7 +114,7 @@ body {
 }
 
 .btn-voltar:hover {
-    background-color: #4B0082;
+    background-color: #1A9654;
 }
 
 @keyframes fadeIn {
@@ -146,7 +146,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
-    background-color: #663399;
+    background-color: #105c34;
     padding: 15px;
     border-radius: 10px;
     display: block;
@@ -155,5 +155,27 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #4B0082;
+    background-color: #1A9654;
+}
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flashes li.tarefa_editada {
+    background-color: #ccffcc;
+    color: #00cc00;
+}
+
+.flashes li.tarefa_excluida {
+    background-color: #ccffcc;
+    color: #00cc00;
 }

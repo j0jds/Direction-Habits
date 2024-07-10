@@ -5,29 +5,69 @@
     font-family: "Poppins", sans-serif;
 }
 
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #105c34;
+    color: #ffffff;
+    z-index: 1000;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.header a img {
+    width: 130px;
+    height: auto;
+    text-decoration: none;
+}
+
+.header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.header nav ul li {
+    margin-right: 20px;
+}
+
+.header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.header nav ul li a:hover {
+    text-decoration: none;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #483D8B, #A87BDE);
+    background: linear-gradient(135deg, #1A9654, #C7E9D6); 
 }
 
 .container {
-    background-color: #E6E6FA;
+    background-color: #C7E9D6; 
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 600px;
     text-align: center;
-    animation: fadeIn 0.5s ease-in-out;
+    animation: slideUp 1.5s ease-in-out;
 }
 
 .container h2 {
     margin-bottom: 20px;
-    color: #222222;
+    color: #003117; 
     font-size: 24px;
 }
 
@@ -42,8 +82,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color:#ffffff;
-    background-color:#663399;
+    color: #ffffff;
+    background-color: #105c34; 
     padding: 15px;
     border-radius: 8px;
     display: block;
@@ -52,7 +92,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color:#4B0082;
+    background-color: #1A9654;
 }
 
 @keyframes fadeIn {
@@ -65,3 +105,50 @@ nav ul li a:hover {
         transform: translateY(0);
     }
 }
+
+.footer {
+    background-color: #105c34; 
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+.social-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.social-links li {
+    margin-right: 20px;
+}
+
+.social-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-links li a:hover {
+    text-decoration: none;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

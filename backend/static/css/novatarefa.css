@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    animation: fadeIn 1s ease-in-out;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #483D8B, #A87BDE);
+    background: linear-gradient(135deg, #1A9654, #C7E9D6); 
 }
 
 .container {
@@ -27,7 +28,7 @@ body {
 
 .container h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #003117; 
     font-size: 24px;
 }
 
@@ -53,7 +54,7 @@ form input[type="text"] {
 
 form input[type="text"]:focus {
     outline: none;
-    border-color: #663399;
+    border-color: #105c34;
 }
 
 .prioridade {
@@ -84,14 +85,14 @@ form input[type="text"]:focus {
 }
 
 .radio-buttons input[type="radio"]:checked + label {
-    background-color:#663399;
+    background-color:#105c34;
     color: white;
-    border-color: #663399;
+    border-color: #105c34;
 }
 
 form button {
-    color:#663399;
-    background-color:#663399;
+    color:#105c34;
+    background-color:#105c34;
     padding: 14px 24px;
     border: none;
     border-radius: 8px;
@@ -102,7 +103,7 @@ form button {
 }
 
 form button:hover {
-    background-color:#4B0082;
+    background-color:#1A9654;
 }
 
 nav ul {
@@ -117,7 +118,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color:#ffffff;
-    background-color:#663399;
+    background-color:#105c34;
     padding: 15px;
     border-radius: 8px;
     display: block;
@@ -126,7 +127,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color:#4B0082;
+    background-color:#1A9654;
 }
 
 .btn-salvar {
@@ -134,7 +135,7 @@ nav ul li a:hover {
     padding: 14px 24px;
     border: none;
     border-radius: 8px;
-    background-color:#663399;
+    background-color:#105c34;
     color: white;
     font-size: 18px;
     cursor: pointer;
@@ -143,29 +144,7 @@ nav ul li a:hover {
 }
 
 .btn-salvar:hover {
-    background-color:#4B0082;
-}
-
-.flashes {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.flashes li {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.flashes li.error {
-    background-color: #ffcccc;
-    color: #ff0000;
-}
-
-.flashes li.success {
-    background-color: #ccffcc;
-    color: #00cc00;
+    background-color:#1A9654;
 }
 
 @keyframes fadeIn {
@@ -186,3 +165,23 @@ nav ul li a:hover {
         padding: 20px;
     }
 }
+
+#mensagem-erro {
+    display: none;
+    background-color: #ffcccc;
+    color: red;
+    margin-bottom: 20px;
+}
+
+#mensagem-erro {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#mensagem-erro {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
