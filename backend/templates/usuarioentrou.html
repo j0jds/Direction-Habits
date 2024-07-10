@@ -20,6 +20,10 @@
                 <li><a href="https://portal.direction.com.br/Main/">Suporte</a></li>
             </ul>
         </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+        </div>
     </header>
     <div class="container">
         <h2>Boas-vindas, {{ nome }}!</h2>
@@ -52,5 +56,6 @@
         </nav>
     </footer>
 
+    <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
 </body>
 </html>

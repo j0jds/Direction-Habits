@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    animation: fadeIn 1s ease-in-out;
 }
 
 .header {
@@ -15,27 +14,22 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #105c34; 
+    background-color: #105c34;
     color: #ffffff;
     z-index: 1000;
     animation: fadeIn 1s ease-in-out;
 }
 
 .header a img {
-    width: 130px; 
+    width: 130px;
     height: auto;
-    text-decoration: none;
-}
-
-.header .logo a {
-    color: #ffffff;
-    font-size: 24px;
     text-decoration: none;
 }
 
 .header nav ul {
     list-style-type: none;
     display: flex;
+    flex-direction: column;
 }
 
 .header nav ul li {
@@ -45,11 +39,24 @@
 .header nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .header nav ul li a:hover {
     text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background-color: #ffffff;
+    height: 3px;
+    margin: 4px;
+    width: 25px;
 }
 
 body {
@@ -99,7 +106,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #1A9654; 
+    background-color: #1A9654;
 }
 
 @keyframes fadeIn {
@@ -147,23 +154,6 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-.flashes {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.flashes li {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.flashes li.login_success {
-    background-color: #ccffcc;
-    color: #00cc00;
-}
-
 @keyframes slideUp {
     from {
         transform: translateY(100%);
@@ -175,3 +165,56 @@ nav ul li a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .header nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: -100%;
+        width: 100%;
+        background-color: #105c34;
+        transition: left 0.5s ease;
+    }
+
+    .header nav ul.show {
+        left: 0;
+    }
+
+    .header nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .header a img {
+        width: 100px;
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        padding: 10%;
+    }
+
+    .header nav ul li {
+        margin: 5px 0;
+    }
+
+    .container {
+        padding: 18px;
+        max-width: 95%;
+    }
+
+    .container h2 {
+        font-size: 20px;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+        padding: 15px;
+    }
+}
