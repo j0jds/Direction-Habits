@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuário Entrou</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/usuarioentrou.css') }}">
 </head>
+
 <body>
+
+    <header class="header">
+        <a href="https://www.direction.com.br/">
+            <img src="{{ url_for('static', filename='direction_habits_logo.png') }}" alt="Direction Habits">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="https://www.direction.com.br/about">Quem Somos?</a></li>
+                <li><a href="https://portal.direction.com.br/Main/">Suporte</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <h2>Boas-vindas, {{ nome }}!</h2> 
+        <h2>Boas-vindas, {{ nome }}!</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            {% if 'login_success' in category %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
         <nav>
             <ul>
                 <li><a href="{{ url_for('novatarefa') }}">Registrar Nova Tarefa</a></li>
@@ -17,5 +42,16 @@
             </ul>
         </nav>
     </div>
+
+    <footer class="footer">
+        <nav>
+            <ul class="social-links">
+                <li><a href="https://github.com/j0jds">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/j0jds/">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </footer>
+
 </body>
+
 </html>
