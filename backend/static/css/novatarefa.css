@@ -13,9 +13,11 @@ body {
     height: 100vh;
     margin: 0;
     background: linear-gradient(135deg, #1A9654, #C7E9D6);
+    overflow: hidden;
 }
 
 .container {
+    align-self: center;
     background-color: #c7e9cd;
     padding: 40px;
     border-radius: 20px;
@@ -188,7 +190,7 @@ nav ul li a:hover {
 
 @media (max-width: 480px) {
     .container {
-        padding: 18px;
+        padding: 8%;
         max-width: 95%;
     }
 
