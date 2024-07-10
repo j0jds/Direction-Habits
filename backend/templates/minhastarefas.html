@@ -12,6 +12,20 @@
 <body>
     <div class="container">
         <h2>Listagem de Tarefas</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            {% if 'tarefa_editada' in category %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endif %}
+            {% if 'tarefa_excluida' in category %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
         <div class="tasks">
             {% for tarefa in tarefas %}
             <div class="task">
@@ -33,7 +47,7 @@
         <nav>
             <ul>
                 <li><a href="{{ url_for('novatarefa') }}">Adicionar Nova Tarefa</a></li>
-                <li><a href="{{ url_for('usuarioentrou') }}">Voltar</a></li>    
+                <li><a href="{{ url_for('usuarioentrou') }}">Voltar</a></li>
             </ul>
         </nav>
     </div>
