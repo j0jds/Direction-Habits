@@ -215,4 +215,4 @@ def editartarefas(tarefa_id):
     return render_template('editartarefas.html', tarefa=tarefa)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
