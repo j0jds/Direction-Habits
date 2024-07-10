@@ -13,7 +13,7 @@ body {
     height: 100vh;
     margin: 0;
     background: linear-gradient(135deg, #E02513, #DB4839);
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .container {
