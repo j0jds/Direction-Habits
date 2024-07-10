@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    animation: fadeIn 1s ease-in-out;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #483D8B, #A87BDE);
+    background: linear-gradient(135deg, #1A9654, #C7E9D6);
 }
 
 .container {
@@ -27,7 +28,7 @@ body {
 
 .container h2 {
     margin-bottom: 20px;
-    color: #222222;
+    color: #003117;
     font-size: 24px;
 }
 
@@ -67,7 +68,7 @@ input[type="password"]:focus::placeholder {
     padding: 14px 24px;
     border: none;
     border-radius: 8px;
-    background-color:#663399;
+    background-color:#105c34;
     color: white;
     font-size: 18px;
     cursor: pointer;
@@ -76,7 +77,7 @@ input[type="password"]:focus::placeholder {
 }
 
 .cadastro-btn:hover {
-    background-color:#4B0082;
+    background-color: #1A9654;
 }
 
 nav ul {
@@ -91,7 +92,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color:#ffffff;
-    background-color:#663399;
+    background-color: #105c34;
     padding: 15px;
     border-radius: 8px;
     display: block;
@@ -100,7 +101,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color:#4B0082;
+    background-color: #1A9654;
 }
 
 .flashes {

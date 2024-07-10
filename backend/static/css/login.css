@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    animation: fadeIn 1s ease-in-out;
 }
 
 body {
@@ -11,11 +12,11 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #483D8B, #A87BDE);
+    background: linear-gradient(135deg, #1A9654, #C7E9D6);
 }
 
 .container {
-    background-color: #E6E6FA;
+    background-color: #C7E9D6;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -27,7 +28,7 @@ body {
 
 .container h2 {
     margin-bottom: 20px;
-    color: #222222;
+    color: #003117;
     font-size: 24px;
 }
 
@@ -63,7 +64,7 @@ input[type="password"]:focus::placeholder {
     padding: 14px 24px;
     border: none;
     border-radius: 8px;
-    background-color:#663399;
+    background-color: #105c34; 
     color: white;
     font-size: 18px;
     cursor: pointer;
@@ -72,7 +73,7 @@ input[type="password"]:focus::placeholder {
 }
 
 .entrar-btn:hover {
-    background-color:#4B0082;
+    background-color: #1A9654;
 }
 
 nav ul {
@@ -86,8 +87,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color:#ffffff;
-    background-color:#663399;
+    color: #ffffff;
+    background-color: #105c34;
     padding: 15px;
     border-radius: 8px;
     display: block;
@@ -96,7 +97,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color:#4B0082;
+    background-color: #1A9654;
 }
 
 .flashes {
@@ -114,11 +115,6 @@ nav ul li a:hover {
 .flashes li.login_error {
     background-color: #ffcccc;
     color: #ff0000;
-}
-
-.flashes li.login_success {
-    background-color: #ccffcc;
-    color: #00cc00;
 }
 
 @keyframes fadeIn {

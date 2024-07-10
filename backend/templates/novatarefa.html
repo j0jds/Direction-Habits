@@ -13,8 +13,7 @@
     <div class="container">
         <h2>Nova Tarefa</h2>
         <form id="form-nova-tarefa" method="POST" action="{{ url_for('novatarefa') }}">
-            <div id="mensagem-erro" style="display: none; color: red; margin-bottom: 20px;">Selecione uma prioridade
-                para prosseguir.</div>
+            <div id="mensagem-erro" class="mensagem-erro">Selecione uma prioridade para prosseguir.</div>
             <input type="text" id="nome" name="nome" placeholder="Nome da Tarefa" required>
             <input type="text" id="descricao" name="descricao" placeholder="Descrição da Tarefa" required>
             <div class="prioridade">

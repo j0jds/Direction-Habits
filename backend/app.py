@@ -136,7 +136,6 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash('Logout realizado com sucesso!', 'logout_success')
     return redirect(url_for('home'))
 
 @app.route("/usuarioentrou")
@@ -161,7 +160,6 @@ def novatarefa():
         db.commit()
         cursor.close()
         
-        flash('Tarefa criada com sucesso!', 'tarefa_success')
         return redirect(url_for('minhastarefas'))  
     
     return render_template("novatarefa.html")
@@ -189,7 +187,7 @@ def excluir_tarefa(tarefa_id):
     cursor.execute('DELETE FROM tarefa WHERE id = ?', (tarefa_id,))
     db.commit()
     cursor.close()
-    flash('Tarefa excluída com sucesso!', 'tarefa_success')
+    flash('Tarefa excluída com sucesso!', 'tarefa_excluida')
     return redirect(url_for('minhastarefas'))
 
 @app.route("/editartarefas/<int:tarefa_id>", methods=['GET', 'POST'])
@@ -211,7 +209,7 @@ def editartarefas(tarefa_id):
         db.commit()
         cursor.close()
         
-        flash('Tarefa atualizada com sucesso!', 'tarefa_success')
+        flash('Tarefa atualizada com sucesso!', 'tarefa_editada')
         return redirect(url_for('minhastarefas'))
 
     return render_template('editartarefas.html', tarefa=tarefa)

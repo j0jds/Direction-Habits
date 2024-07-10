@@ -13,15 +13,15 @@
         <h2>Entrar</h2>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                <ul class="flashes">
-                {% for category, message in messages %}
-                    {% if 'login' in category %}
-                        <li class="{{ category }}">{{ message }}</li>
-                    {% endif %}
-                {% endfor %}
-                </ul>
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            {% if 'login_error' in category %}
+            <li class="{{ category }}">{{ message }}</li>
             {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
         {% endwith %}
 
         <form id="form-entrar-membro" method="POST" action="{{ url_for('login') }}">
