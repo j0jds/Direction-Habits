@@ -20,10 +20,25 @@
                 <li><a href="https://portal.direction.com.br/Main/">Suporte</a></li>
             </ul>
         </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <div class="container">
         <h2>Boas-vindas ao Direction Habits!</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            {% if 'excluirusuario_success' in category %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
         <nav>
             <ul>
                 <li><a href="{{ url_for('cadastro') }}">Cadastrar-se</a></li>
@@ -41,6 +56,7 @@
         </nav>
     </footer>
 
+    <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
 </body>
 
 </html>

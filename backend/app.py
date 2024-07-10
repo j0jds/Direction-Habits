@@ -214,5 +214,32 @@ def editartarefas(tarefa_id):
 
     return render_template('editartarefas.html', tarefa=tarefa)
 
+@app.route("/excluirusuario", methods=['GET', 'POST'])
+@login_required
+def excluirusuario():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        email = request.form['email']
+        senha = request.form['senha']
+        
+        db = get_db()
+        cursor = db.cursor()
+        
+        cursor.execute('SELECT * FROM membros WHERE nome = ? AND email = ? AND senha = ?', (nome, email, senha))
+        user = cursor.fetchone()
+        
+        if user:
+            cursor.execute('DELETE FROM membros WHERE id = ?', (user[0],))
+            db.commit()
+            cursor.close()
+            logout_user()
+            flash('Conta excluída com sucesso!', 'excluirusuario_success')
+            return redirect(url_for('home'))
+        else:
+            flash('Informações incorretas. Por favor, tente novamente.', 'excluirusuario_error')
+            cursor.close()
+    
+    return render_template("excluirusuario.html")
+
 if __name__ == "__main__":
     app.run()
