@@ -46,6 +46,10 @@ This is a habit tracking web application developed with Python using the Flask f
  - `animation: fadeIn 1s easy-in-out;`: Fade-in animation
  - `animation: slideUp 1.5s easy-in-out;`: Slide-in animation
 
+## Host
+
+If you want to access without install anything, the website is disponible here: `http://j0jds.pythonanywhere.com/`
+
 ## Documentation Used
 
 - https://flask.palletsprojects.com/en/3.0.x/
