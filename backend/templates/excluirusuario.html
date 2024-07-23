@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Excluir</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/excluirusuario.css') }}">
 </head>
 
 <body>
     <div class="container">
-        <h2>Entrar</h2>
+        <h2>Excluir Conta</h2>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
         <ul class="flashes">
             {% for category, message in messages %}
-            {% if 'login_error' in category %}
+            {% if 'excluirusuario_error' in category %}
             <li class="{{ category }}">{{ message }}</li>
             {% endif %}
             {% endfor %}
@@ -24,14 +24,16 @@
         {% endif %}
         {% endwith %}
 
-        <form id="form-entrar-membro" method="POST" action="{{ url_for('login') }}">
+        <form id="form-excluir-usuario" method="POST" action="{{ url_for('excluirusuario') }}">
+            <input type="text" id="nome" name="nome" placeholder="Nome" required>
             <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="password" id="senha" name="senha" placeholder="Senha" required>
-            <button type="submit" class="entrar-btn">Entrar</button>
+            <button type="submit" class="excluir-btn">Excluir</button>
         </form>
+
         <nav>
             <ul>
-                <li><a href="{{ url_for('home') }}">Voltar</a></li>
+                <li><a href="{{ url_for('usuarioentrou') }}">Voltar</a></li>
             </ul>
         </nav>
     </div>

@@ -2,32 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    animation: fadeIn 1s ease-in-out;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(180deg, #002f01, #022d29);
+    background: linear-gradient(135deg, #1A9654, #C7E9D6);
+    overflow: scroll;
 }
 
 .container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 20px; 
+    align-self: center;
+    background-color: #c7e9cd;
+    padding: 40px;
+    border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 400px; 
+    max-width: 600px;
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
 }
 
 .container h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #003117;
     font-size: 24px;
 }
 
@@ -37,6 +40,7 @@ form {
     align-items: center;
 }
 
+input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
@@ -48,31 +52,34 @@ input[type="password"] {
     outline: none;
 }
 
+input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="password"]::placeholder {
-    color: #aaa; 
+    color: #aaa;
 }
 
+input[type="text"]:focus::placeholder,
 input[type="email"]:focus::placeholder,
 input[type="password"]:focus::placeholder {
-    color: #000000; 
+    color: #000000;
 }
+
 
 .cadastro-btn {
     width: 100%;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 14px 24px;
     border: none;
-    border-radius: 10px;
-    background-color: #009199;
+    border-radius: 8px;
+    background-color: #105c34;
     color: white;
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
 .cadastro-btn:hover {
-    background-color: #022d29;
+    background-color: #1A9654;
 }
 
 nav ul {
@@ -86,17 +93,34 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
-    background-color: #009199;
+    color: #ffffff;
+    background-color: #105c34;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 8px;
     display: block;
     transition: background-color 0.3s ease;
     font-size: 18px;
 }
 
 nav ul li a:hover {
-    background-color: #022d29;
+    background-color: #1A9654;
+}
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flashes li.cadastro_error {
+    background-color: #ffcccc;
+    color: #ff0000;
 }
 
 @keyframes fadeIn {
@@ -104,8 +128,26 @@ nav ul li a:hover {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8%;
+        max-width: 95%;
+    }
+
+    .container h2 {
+        font-size: 20px;
+    }
+
+    nav ul li a,
+    .cadastro-btn {
+        font-size: 15px;
+        padding: 15px;
     }
 }

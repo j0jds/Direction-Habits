@@ -42,6 +42,14 @@
     font-size: 15px;
 }
 
+nav ul li a.delete-account {
+    background-color: #800000;
+}
+
+nav ul li a.delete-account:hover {
+    background-color: #ff0000;
+}
+
 .header nav ul li a:hover {
     text-decoration: none;
 }
@@ -72,7 +80,7 @@ body {
 .container {
     align-self: center;
     background-color: #c7e9cd;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -136,7 +144,6 @@ nav ul li a:hover {
     width: 100%;
     z-index: 1000;
     animation: fadeIn 1s ease-in-out;
-
 }
 
 .social-links {
@@ -238,7 +245,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.flashes li.excluirusuario_success {
+.flashes li.login_success {
     background-color: #ccffcc;
     color: #00cc00;
 }

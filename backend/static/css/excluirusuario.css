@@ -12,13 +12,13 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #1A9654, #C7E9D6);
+    background: linear-gradient(135deg, #E02513, #DB4839);
     overflow: scroll;
 }
 
 .container {
     align-self: center;
-    background-color: #c7e9cd;
+    background-color: #e9c7c7;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -30,7 +30,7 @@ body {
 
 .container h2 {
     margin-bottom: 20px;
-    color: #003117;
+    color: #E02512;
     font-size: 24px;
 }
 
@@ -40,6 +40,7 @@ form {
     align-items: center;
 }
 
+input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
@@ -51,22 +52,25 @@ input[type="password"] {
     outline: none;
 }
 
+input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="password"]::placeholder {
     color: #aaa;
 }
 
+input[type="text"]:focus::placeholder,
 input[type="email"]:focus::placeholder,
 input[type="password"]:focus::placeholder {
     color: #000000;
 }
 
-.entrar-btn {
+
+.excluir-btn {
     width: 100%;
     padding: 14px 24px;
     border: none;
     border-radius: 8px;
-    background-color: #105c34;
+    background-color: #800000;
     color: white;
     font-size: 18px;
     cursor: pointer;
@@ -74,8 +78,8 @@ input[type="password"]:focus::placeholder {
     margin-top: 20px;
 }
 
-.entrar-btn:hover {
-    background-color: #1A9654;
+.excluir-btn:hover {
+    background-color: #ff0000;
 }
 
 nav ul {
@@ -90,7 +94,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #ffffff;
-    background-color: #105c34;
+    background-color: #800000;
     padding: 15px;
     border-radius: 8px;
     display: block;
@@ -99,7 +103,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #1A9654;
+    background-color: #ff0000;
 }
 
 .flashes {
@@ -114,7 +118,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.flashes li.login_error {
+.flashes li.excluirusuario_error {
     background-color: #ffcccc;
     color: #ff0000;
 }
@@ -132,7 +136,6 @@ nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
-
     .container {
         padding: 8%;
         max-width: 95%;
@@ -143,7 +146,7 @@ nav ul li a:hover {
     }
 
     nav ul li a,
-    .entrar-btn {
+    .excluir-btn {
         font-size: 15px;
         padding: 15px;
     }

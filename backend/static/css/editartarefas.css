@@ -30,7 +30,7 @@ body {
 
 .container h2 {
     margin-bottom: 20px;
-    color: #003117;
+    color: #333;
     font-size: 24px;
 }
 
@@ -94,7 +94,7 @@ form input[type="text"]:focus {
 
 form button {
     color: #105c34;
-    background-color: #105c34;
+    background-color: #1A9654;
     padding: 14px 24px;
     border: none;
     border-radius: 8px;
@@ -167,25 +167,6 @@ nav ul li a:hover {
         margin: 20px auto;
         padding: 20px;
     }
-}
-
-#mensagem-erro {
-    display: none;
-    background-color: #ffcccc;
-    color: red;
-    margin-bottom: 20px;
-}
-
-#mensagem-erro {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-#mensagem-erro {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
 }
 
 @media (max-width: 480px) {
