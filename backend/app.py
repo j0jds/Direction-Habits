@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, g, flash
 import sqlite3
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+from wtforms import PasswordField, validators
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
 
@@ -10,6 +11,9 @@ app.config['SECRET_KEY'] = 'cookiesecreto'
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+class RegistrationForm(Form):
+    senha = PasswordField('senha', [validators.Length(min=6, max=40)])
+    
 class Usuario(UserMixin):
     def __init__(self, id, nome, email, senha):
         self.id = id
@@ -76,14 +80,19 @@ def home():
 
 @app.route("/cadastro", methods=['GET', 'POST'])
 def cadastro():
-    if request.method == 'POST':
+    form = RegistrationForm(request.form)
+    if request.method == 'POST'and form.validate():
         nome = request.form['nome']
         email = request.form['email']
-        senha = request.form['senha']
+        senha = PasswordField['senha']
         
         db = get_db()
         cursor = db.cursor()
         
+        if len(PasswordField) <= 5:
+            flash('A senha não pode ter menos que 6 caracteres!', 'senha_error')
+            return redirect(url_for('cadastro'))
+
         cursor.execute('SELECT * FROM membros WHERE email = ?', (email,))
         existing_user = cursor.fetchone()
         
@@ -242,4 +251,4 @@ def excluirusuario():
     return render_template("excluirusuario.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
