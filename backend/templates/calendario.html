@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/calendario.css') }}">
+    <script src="{{ url_for('static', filename='js/calendario.js') }}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Calendário de Tarefas</h2>
+        
+        <div id="calendar" class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <h3 id="current-month">Julho 2024</h3>
+                <button id="next-month">&gt;</button>
+            </div>
+            <div class="calendar-body">
+                <div class="calendar-weekdays">
+                    <div>Dom</div>
+                    <div>Seg</div>
+                    <div>Ter</div>
+                    <div>Qua</div>
+                    <div>Qui</div>
+                    <div>Sex</div>
+                    <div>Sáb</div>
+                </div>
+                <div id="calendar-dates" class="calendar-dates">
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('usuarioentrou') }}">Voltar</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>

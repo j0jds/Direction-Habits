@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    animation: fadeIn 1s ease-in-out;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #1A9654, #C7E9D6);
+    overflow: scroll;
+}
+
+.container {
+    align-self: center;
+    background-color: #c7e9cd;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    margin-top: 20px;
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #003117;
+    font-size: 24px;
+}
+
+#calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E6E6FA;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.calendar-header button {
+    background-color: #105c34;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-header button:hover {
+    background-color: #1A9654;
+}
+
+#current-month {
+    font-size: 18px;
+    color: #003117;
+}
+
+.calendar-weekdays {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.calendar-weekdays div {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    color: #003117;
+}
+
+.calendar-dates {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5px;
+}
+
+.calendar-date {
+    width: calc(100% / 7 - 10px);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    color: #003117;
+}
+
+.calendar-date.has-task {
+    background-color: #ffeb3b;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #105c34;
+    padding: 15px;
+    border-radius: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8%;
+        max-width: 95%;
+    }
+
+    .container h2 {
+        font-size: 20px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

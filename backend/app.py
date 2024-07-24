@@ -187,6 +187,12 @@ def minhastarefas():
     return render_template("minhastarefas.html", tarefas=tarefas)
 
 
+@app.route("/calendario")
+@login_required
+def calendario():
+    return render_template("calendario.html")
+
+
 @app.route("/excluir_tarefa/<int:tarefa_id>", methods=['POST'])
 @login_required
 def excluir_tarefa(tarefa_id):
