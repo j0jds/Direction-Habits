@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, g, flash
 import sqlite3
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+from datetime import datetime 
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static')
 
@@ -179,7 +180,7 @@ def minhastarefas():
     
     db = get_db()
     cursor = db.cursor()
-    cursor.execute('SELECT * FROM tarefa WHERE usuario_id = ?', (usuario_id,))
+    cursor.execute('SELECT id, nome, descricao, prioridade, DATE(data_criacao) FROM tarefa WHERE usuario_id = ?', (usuario_id,))
     tarefas = cursor.fetchall()
     cursor.close()
 

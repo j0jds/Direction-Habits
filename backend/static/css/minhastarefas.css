@@ -199,3 +199,8 @@ nav ul li a:hover {
         padding: 15px;
     }
 }
+
+.task-date {
+    font-size: 14px;
+    color: #999;
+}
