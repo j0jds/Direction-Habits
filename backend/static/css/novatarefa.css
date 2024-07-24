@@ -208,3 +208,20 @@ nav ul li a:hover {
         font-size: 16px;
     }
 }
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flashes li.tarefa_error {
+    background-color: #ffcccc;
+    color: #ff0000;
+}

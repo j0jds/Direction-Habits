@@ -156,6 +156,13 @@ def novatarefa():
         db = get_db()
         cursor = db.cursor()
         
+        cursor.execute('SELECT id FROM tarefa WHERE nome = ? AND usuario_id = ?', (nome, usuario_id))
+        existing_task = cursor.fetchone()
+        
+        if existing_task:
+            flash('Nome de tarefa já usado', 'tarefa_error')
+            return redirect(url_for('novatarefa'))
+        
         cursor.execute('INSERT INTO tarefa (nome, descricao, prioridade, usuario_id) VALUES (?, ?, ?, ?)', (nome, descricao, prioridade, usuario_id))
         db.commit()
         cursor.close()

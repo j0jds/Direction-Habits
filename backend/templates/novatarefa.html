@@ -12,6 +12,20 @@
 <body>
     <div class="container">
         <h2>Nova Tarefa</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            {% if 'tarefa_error' in category %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+
         <form id="form-nova-tarefa" method="POST" action="{{ url_for('novatarefa') }}">
             <div id="mensagem-erro" class="mensagem-erro">Selecione uma prioridade para prosseguir.</div>
             <input type="text" id="nome" name="nome" placeholder="Nome da Tarefa" required>
