@@ -161,7 +161,7 @@ def novatarefa():
         existing_task = cursor.fetchone()
         
         if existing_task:
-            flash('Nome de tarefa já usado', 'tarefa_error')
+            flash('Nome de tarefa já usado para este usuário.', 'tarefa_error')
             return redirect(url_for('novatarefa'))
         
         cursor.execute('INSERT INTO tarefa (nome, descricao, prioridade, usuario_id) VALUES (?, ?, ?, ?)', (nome, descricao, prioridade, usuario_id))
